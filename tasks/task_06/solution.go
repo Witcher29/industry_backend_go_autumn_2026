@@ -46,9 +46,9 @@ func (lruCachePtr *LRUCache[K, V]) Set(key K, value V) {
 	}
 
 	if lruCachePtr.ll.Len() >= lruCachePtr.capacity {
-		if back := lruCachePtr.ll.Back(); back != nil {
-			delete(lruCachePtr.items, back.Value.(*entry[K, V]).key)
-			lruCachePtr.ll.Remove(back)
+		if backEl := lruCachePtr.ll.Back(); backEl != nil {
+			delete(lruCachePtr.items, backEl.Value.(*entry[K, V]).key)
+			lruCachePtr.ll.Remove(backEl)
 		}
 	}
 
