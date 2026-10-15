@@ -10,7 +10,6 @@ func Calc(nums []int64) Stats {
 		return Stats{}
 	}
 
-	// Первая разность задаёт начальные Min и Max.
 	first := nums[1] - nums[0]
 	s := Stats{
 		Count: 1,
